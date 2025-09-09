@@ -22,7 +22,7 @@ class HomePageView(TemplateView):
         ).order_by("-published_at")[:5]
 
         one_week_ago = timezone.now() - timedelta(days=7)
-        print(one_week_ago)
+        
 
         context["weeky_top_posts"]= Post.objects.filter(
             published_at__isnull=False, status="active", published_at__gte=one_week_ago
