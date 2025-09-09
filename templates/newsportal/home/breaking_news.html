@@ -9,7 +9,7 @@
                    onmouseout="this.start();">
 
             {% for post in breaking_news %}
-            <a href="article.html" class="text-dark text-decoration-none me-4">{{post.title|trncatechars:50}}</a>
+            <a href="article.html" class="text-dark text-decoration-none me-4">{{post.title|truncatechars:50}}</a>
             
           </marquee>
           {% endfor %}
