@@ -15,7 +15,11 @@
                 <span><i class="bi bi-calendar-event"></i> Published: {{ post.published_at|date:"F j, Y"}}</span>
                 <span><i class="bi bi-eye"></i> Views: {{ post.views_count }}</span>
                 <span><i class="bi bi-folder"></i>Category: <a href="#" class="text-decoration-none ms-1">{{ post.category.name }}</a></span>
-                <span><i class="bi bi-tags"></i>Tags: <a href="#" class="text-decoration-none ms-1">#nepal, #tourism, #culture</a></span>
+                <span><i class="bi bi-tags"></i>Tags: <a href="#" class="text-decoration-none ms-1">
+                  {% for tag in post.tag.all %}
+                    #{{ tag.name }},
+                  {% endfor %}
+                </a></span>
               </div>
               <img src="https://placehold.co/1200x500/28a745/ffffff?text=Featured+Article+Image"
                    alt="Featured Article Image" />
