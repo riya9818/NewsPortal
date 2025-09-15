@@ -17,7 +17,8 @@
                 <span><i class="bi bi-folder"></i>Category: <a href="#" class="text-decoration-none ms-1">{{ post.category.name }}</a></span>
                 <span><i class="bi bi-tags"></i>Tags: <a href="#" class="text-decoration-none ms-1">
                   {% for tag in post.tag.all %}
-                    #{{ tag.name }},
+                    #{{ tag.name }}
+                    {% if not forloop.last %}, {% endif %}
                   {% endfor %}
                 </a></span>
               </div>
