@@ -18,7 +18,7 @@
                        alt="{{ post.title }}" />
                   <div class="card-body">
                     <h5 class="card-title">{{ post.title }}</h5>
-                    <a href="article.html" class="btn btn-outline-success btn-sm mt-2">Read More</a>
+                    <a href="{% url 'post-detail' post.pk %}" class="btn btn-outline-success btn-sm mt-2">Read More</a>
                   </div>
                   <div class="card-footer">
                     <small class="text-muted">{{ post.published_at|date:"F j, Y"}}</small>
