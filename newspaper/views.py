@@ -89,3 +89,6 @@ class PostDetailView(SidebarMixin, DetailView):
          )
          return context
         
+class AboutView(TemplateView):
+     template_name="newsportal/about.html"
+     
