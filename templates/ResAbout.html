@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Portal - About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- Elegant Navbar (Reused Structure) -->
+    <nav class="navbar navbar-expand-lg sticky-top elegant-navbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">NewsPortal</a>
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="latest-news.html">Latest News</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"
+                 href="#"
+                 role="button"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false">Categories</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">Politics</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Sports</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Technology</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Entertainment</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="all-categories.html">All Categories</a>
+                </li>
+                 <li>
+                  <a class="dropdown-item" href="all-tags.html">All Tags</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#newsletter-section">Newsletter</a>
+            </li>
+          </ul>
+          <form class="d-flex me-3" role="search">
+            <input class="form-control form-control-sm me-2"
+                   type="search"
+                   placeholder="Search..."
+                   aria-label="Search" />
+            <button class="btn btn-outline-success btn-sm" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+          <div class="form-check form-switch">
+            <input class="form-check-input"
+                   type="checkbox"
+                   role="switch"
+                   id="darkModeSwitch" />
+            <label class="form-check-label" for="darkModeSwitch">
+              <i class="bi bi-moon-stars-fill"></i>
+            </label>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="container mt-4">
+      <h1 class="mb-4 section-title">
+        <span>About NewsPortal</span>
+      </h1>
+
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <img src="https://placehold.co/800x450/28a745/ffffff?text=Our+Mission"
+               class="img-fluid rounded shadow"
+               alt="Our Mission" />
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h3 class="mt-3 mt-md-0 about-mission-title">Our Mission</h3>
+          <p class="lead">
+            To deliver timely, accurate, and unbiased news from around the globe, empowering our readers with the information they need to understand the world.
+          </p>
+          <p>
+            NewsPortal was founded with the belief that access to reliable information is crucial in today's fast-paced world. We strive to cover a wide range of topics, from breaking political events to the latest technological advancements and cultural happenings.
+          </p>
+        </div>
+      </div>
+
+      <hr class="my-5" />
+
+      <div class="row text-center">
+        <h2 class="mb-5 section-title">
+          <span>Meet Our Team</span>
+        </h2>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-member">
+            <img src="https://placehold.co/150/6c757d/ffffff?text=Editor"
+                 alt="Team Member 1" />
+            <h5 class="mt-3">Alex Johnson</h5>
+            <p class="text-muted">Editor-in-Chief</p>
+            <p>Alex leads our editorial team with a passion for journalistic integrity and compelling storytelling.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-member">
+            <img src="https://placehold.co/150/17a2b8/ffffff?text=Reporter"
+                 alt="Team Member 2" />
+            <h5 class="mt-3">Maria Garcia</h5>
+            <p class="text-muted">Senior Reporter</p>
+            <p>Maria covers international affairs, bringing years of experience from reporting on the ground.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-member">
+            <img src="https://placehold.co/150/ffc107/333333?text=Tech+Lead"
+                 alt="Team Member 3" />
+            <h5 class="mt-3">Sam Chen</h5>
+            <p class="text-muted">Technology Lead</p>
+            <p>Sam ensures our platform is cutting-edge, user-friendly, and always reliable.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer (Reused Structure) -->
+    <footer class="py-5 mt-5 elegant-footer">
+      <div class="container text-center">
+        <p class="mb-1">&copy; 2025 NewsPortal. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <div class="social-icons mt-3">
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-twitter-x fs-4"></i></a>
+          <a href="#" class="text-decoration-none me-3"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="#" class="text-decoration-none"><i class="bi bi-linkedin fs-4"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
