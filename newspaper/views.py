@@ -5,7 +5,7 @@ from datetime import timedelta
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 
 from newspaper.forms import ContactForm
-from newspaper.models import Advertisement, Contact, OurTeam, Post, Tag
+from newspaper.models import Advertisement, Category, Contact, OurTeam, Post, Tag
 
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
@@ -124,3 +124,8 @@ class TagListView(ListView):
      model = Tag
      template_name ="newsportal/tags.html"
      context_object_name ="tags"
+
+class CategoryListView(ListView):
+     model = Category
+     template_name = "newsportal/categories.html"
+     context_object_name="categories"
