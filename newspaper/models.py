@@ -76,3 +76,12 @@ class Contact(TimeStampModel):
     class Meta:
         ordering = ["created_at"]
         
+class Comment(TimeStampModel):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    user = models.ForeignKey("auth_user", on_delete=models.CASCADE)
+    content = models.TextField()
+
+    def __str__(self):
+        return f"{self.content[:50]} | {self.user.username}"
+    
+    
