@@ -109,7 +109,13 @@ class PostDetailView(SidebarMixin,FormMixin, DetailView):
          else:
               return self.form_invalid(form)
          
-     
+     def form_valid(self, form):
+         comment = form.save(commit=False)
+         comment.post = self.object
+         comment.user = self.request.user
+         comment.save()
+         messages.success(self.request,"Your comment has been added successfully.")
+         return super().form_valid(form)
 
 
         
