@@ -3,6 +3,7 @@ from django.utils import timezone
 from datetime import timedelta
 
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
+from django.views.generic.edit import FormMixin
 
 from newspaper.forms import ContactForm
 from newspaper.models import Advertisement, Category, Contact, OurTeam, Post, Tag
@@ -68,7 +69,7 @@ class PostListView(SidebarMixin, ListView):
     
 
     
-class PostDetailView(SidebarMixin, DetailView):
+class PostDetailView(SidebarMixin,FormMixin, DetailView):
     model = Post
     template_name = "newsportal/detail/detail.html"
     context_object_name = "post"
@@ -95,6 +96,22 @@ class PostDetailView(SidebarMixin, DetailView):
               .order_by("-published_at", "-views_count")[:2]
          )
          return context
+    
+     def get_success_url(self):
+          return reverse("post-detail", kwargs={"pk": self.object.pk})
+    
+    @method_Decorator(login_required)
+     def post(self, request, *args, **kwargs):
+         self.object=self.get_object()
+         form = self.get_form()
+         if form.is_valid():
+              return self.form_valid(form)
+         else:
+              return self.form_invalid(form)
+         
+     
+
+
         
 class AboutView(TemplateView):
      template_name="newsportal/about.html"
