@@ -5,10 +5,12 @@
 <div class="card p-4 shadow-sm mb-4">
     {% if request.user.is_authenticated %}
     <!--comment form-->
-    <form>
+    <form method="post" action="">
+        {% csrf_token %}
         <div class="mb-3">
             <label for="commentText" class="form-label">Leave  Comment</label>
             <textarea class="form-control"
+                name="content"
                 id="commentText"
                 rows="4"
                 placeholder="Write your comment here..."></textarea>
