@@ -1,4 +1,4 @@
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from django.utils import timezone
 from datetime import timedelta
 
@@ -100,11 +100,11 @@ class PostDetailView(SidebarMixin,FormMixin, DetailView):
          )
          return context
     
-     def get_success_url(self):
+    def get_success_url(self):
           return reverse("post-detail", kwargs={"pk": self.object.pk})
     
     @method_Decorator(login_required)
-     def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
          self.object=self.get_object()
          form = self.get_form()
          if form.is_valid():
