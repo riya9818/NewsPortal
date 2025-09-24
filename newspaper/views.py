@@ -1,11 +1,13 @@
+from django.http import JsonResponse
 from django.urls import reverse, reverse_lazy
 from django.utils import timezone
 from datetime import timedelta
 
+from django.views import View
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 from django.views.generic.edit import FormMixin
 
-from newspaper.forms import CommentForm, ContactForm
+from newspaper.forms import CommentForm, ContactForm, NewsletterForm
 from newspaper.models import Advertisement, Category, Contact, OurTeam, Post, Tag
 
 from django.contrib.messages.views import SuccessMessageMixin
@@ -187,3 +189,35 @@ class PostByTagView(SidebarMixin, ListView):
                tag__id=self.kwargs["tag_id"],
           ).order_by("-published_at")
           return query
+
+class NewsletterView(View):
+
+    def post(self, request):
+        is_ajax = request.headers.get("x-requested-with")
+        if is_ajax == "XMLHttpRequest":
+            form = NewsletterForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return JsonResponse(
+                    {
+                        "success": True,
+                        "message": "Successfully subscribed to the newsletter .",
+                    },
+                    status=201,
+                )
+            else:
+                return JsonResponse(
+                    {
+                        "success": False,
+                        "message":"Cannot subscribe to the newsletter.",
+                    },
+                    status=400,
+                )
+        else:
+            return JsonResponse(
+                {
+                    "success": False,
+                    "message": "Cannot process. Must be an AJAX XMLHttpRequest",
+                },
+                status=400,
+            )
