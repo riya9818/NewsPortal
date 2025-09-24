@@ -76,6 +76,7 @@ class Contact(TimeStampModel):
     class Meta:
         ordering = ["created_at"]
         
+# post.comment_set.all
 class Comment(TimeStampModel):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     user = models.ForeignKey("auth_user", on_delete=models.CASCADE)
@@ -84,4 +85,8 @@ class Comment(TimeStampModel):
     def __str__(self):
         return f"{self.content[:50]} | {self.user.username}"
     
-    
+class Newsletter(TimeStampModel):
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.email
