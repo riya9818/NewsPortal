@@ -18,6 +18,11 @@ from datetime import timedelta
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+from django.core.paginator import PageNotAnInteger, Paginator
+from django.db.models import Q
+# | => OR
+# & => AND
+
 class SidebarMixin:
 
         def get_context_data(self, **kwargs):
