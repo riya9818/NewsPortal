@@ -106,7 +106,7 @@ class PostDetailView(SidebarMixin,FormMixin, DetailView):
     def get_success_url(self):
           return reverse("post-detail", kwargs={"pk": self.object.pk})
     
-    @method_Decorator(login_required)
+    @method_decorator(login_required)
     def post(self, request, *args, **kwargs):
          self.object=self.get_object()
          form = self.get_form()
@@ -115,7 +115,7 @@ class PostDetailView(SidebarMixin,FormMixin, DetailView):
          else:
               return self.form_invalid(form)
          
-     def form_valid(self, form):
+    def form_valid(self, form):
          comment = form.save(commit=False)
          comment.post = self.object
          comment.user = self.request.user

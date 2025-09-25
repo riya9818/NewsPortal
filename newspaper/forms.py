@@ -1,6 +1,6 @@
 from django import forms
 
-from newspaper.models import Contact, Comment
+from newspaper.models import Contact, Comment, Newsletter
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -15,4 +15,4 @@ class CommentForm(forms.ModelForm):
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = Newsletter
-        fields = "__all"
+        fields = "__all__"
