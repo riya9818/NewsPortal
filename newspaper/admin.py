@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import Post
 
 # Register your models here.
-admin.site.register(Post)
+
 admin.site.register(Tag)
 admin.site.register(Category)
 admin.site.register(Advertisement)
