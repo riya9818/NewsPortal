@@ -29,5 +29,10 @@ urlpatterns = [
         views.DraftListView.as_view(),
         name="draft-list-api",
     ),
+    path(
+        "draft-detail/",
+        views.DraftDetailView.as_view(),
+        name="draft-detail-api",
+    ),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
