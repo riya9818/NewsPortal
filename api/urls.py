@@ -9,6 +9,7 @@ router.register(r'groups', views.GroupViewSet)
 router.register(r'tags', views.TagViewSet)
 router.register(r'categories',views.CategoryViewSet)
 router.register(r'posts',views.PostViewSet)
+router.register(r'newsletters',views.NewsletterViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
