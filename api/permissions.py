@@ -9,5 +9,6 @@ class IsStaffOrOwner(permissions.BasePermission):
         if request.user and request.user.is_staff:
             return True
         
-        
+        return obj.user == request.user
+    
 
