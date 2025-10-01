@@ -41,8 +41,8 @@ urlpatterns = [
     ),
     path(
         "post/<int:post_id>/comments/",
-        views.DraftDetailView.as_view(),
-        name="draft-detail-api",
+        views.CommentListCreateAPIView.as_view(),
+        name="comment-list-create-api",
     ),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
