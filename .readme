@@ -1,0 +1,66 @@
+NewsPortal
+
+A Django-based web application for publishing, managing, and browsing news articles.
+It includes features like featured stories, categories, comments, newsletter subscriptions, and an admin panel for content management.
+
+🚀 Features
+
+Home Page with featured stories and latest articles
+
+Article Pages with full content and publishing date
+
+Categories & Tags for organizing news
+
+Newsletter Subscription (AJAX-based form)
+
+Comment System for readers
+
+Admin Dashboard for managing posts, users, and comments
+
+⚙️ Tech Stack
+
+Backend: Django 5.x, Python 3.13
+
+Frontend: HTML, CSS (Bootstrap 5)
+
+Database: SQLite (default) or PostgreSQL/MySQL
+
+Other: Django Templates, Crispy Forms (optional), AJAX for newsletter
+
+Installation & Setup
+
+1.Clone the repo
+
+git clone https://github.com/your-username/newsportal.git
+cd newsportal
+
+
+2.Create virtual environment
+
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
+
+3.Install dependencies
+
+pip install -r requirements.txt
+
+
+4.Apply migrations
+
+python manage.py migrate
+
+
+5.Create superuser
+
+python manage.py createsuperuser
+
+
+6.Run development server
+
+python manage.py runserver
+
+
+Visit http://127.0.0.1:8000/
+ in your browser. 🎉
